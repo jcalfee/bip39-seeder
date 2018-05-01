@@ -7,7 +7,8 @@
   "scripts": {
     "test": "mocha index.test.js src/**/*.test.js",
     "coverage": "istanbul cover _mocha -- -R spec index.test.js src/**/*.test.js",
-    "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "browserify": "mkdir -p dist && browserify --node bin/seeder -o dist/seeder.js && chmod u+x dist/seeder.js"
   },
   "author": "jcalfee",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "yargs": "^7.1.0"
   },
   "devDependencies": {
+    "browserify": "^14.4.0",
     "coveralls": "^2.13.1",
     "istanbul": "^0.4.5",
     "mocha": "^3.3.0"
